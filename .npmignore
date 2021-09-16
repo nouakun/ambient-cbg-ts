@@ -1,0 +1,5 @@
+.npmignore
+.git
+.vscode
+nodule_modules/
+examples/

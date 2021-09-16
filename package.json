@@ -1,0 +1,50 @@
+{
+  "name": "ambient-cbg-ts",
+  "description": "A React.js webpage backgrounds created using the HTML5 Canvas API and jwagner's Simplex Noise library",
+  "version": "1.0.4",
+  "author": {
+    "name": "Yuriy Lisovskiy",
+    "email": "yuralisovskiy98@gmail.com"
+  },
+  "license": "MIT",
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/esm/index.js",
+  "types": "./lib/esm/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YuriyLisovskiy/ambient-cbg.git"
+  },
+  "bugs": {
+    "url": "https://github.com/YuriyLisovskiy/ambient-cbg/issues"
+  },
+  "keywords": [
+    "react",
+    "react-component",
+    "canvas",
+    "canvas-api",
+    "html5-canvas",
+    "canvas-background"
+  ],
+  "homepage": "https://github.com/YuriyLisovskiy/ambient-cbg#readme",
+  "dependencies": {
+    "simplex-noise": "^2.4.0"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.21",
+    "prettier": "^2.4.0",
+    "react": "^17.0.2",
+    "typescript": "^4.4.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "yarn build:esm && yarn build:cjs",
+    "build:esm": "tsc",
+    "build:cjs": "tsc --module commonjs --outDir lib/cjs"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "files": [
+    "/lib"
+  ]
+}
