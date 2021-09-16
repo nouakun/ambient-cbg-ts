@@ -24,12 +24,11 @@ export interface PipelineProps extends CanvasBackgroundProps {
 }
 
 class Pipeline extends CanvasBackground<PipelineProps> {
-  protected pipeProps: Float32Array | null;
-
-  public static defaultProps = {
-    ...CanvasBackground.defaultProps,
-    backgroundColor: "hsla(150,80%,1%,1)",
+  defaultProps: {
+    backgroundColor: "hsla(150,80%,1%,1)";
   };
+
+  protected pipeProps: Float32Array | null;
 
   constructor(props: any) {
     super(props);

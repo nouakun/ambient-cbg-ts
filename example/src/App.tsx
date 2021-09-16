@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <div>
-        <Pipeline backgroundColor="#3c3c3c"/>
+        <Pipeline  backgroundColor="#3c3c3c" styles={{width: "100%", height: "100%"}}/>
       </div>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
