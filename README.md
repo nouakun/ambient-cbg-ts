@@ -45,5 +45,12 @@ class App extends Component {
 export default App;
 ```
 
+### API
+| Property | Description | Type | Default | Version |
+| --- | --- | --- | --- | --- |
+| backgroundColor | Change the canvas background-color. | string (e.g. #fff) | hsla(150,80%,1%,1) | 1.1.0 |
+| styles | Change the canvas default styles. | CSSProperties | {....} | 1.1.0 |
+
+
 ### License
 This project is licensed under the conditions of the MIT software license, see [LICENSE](LICENSE) file for more details.
