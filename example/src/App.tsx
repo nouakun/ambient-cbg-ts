@@ -5,9 +5,9 @@ import { Pipeline } from "ambient-cbg-ts";
 
 function App() {
   return (
-    <div className="App" style={{ position: "relative" }}>
-      <div style={{ position: "absolute" }}>
-        <Pipeline />
+    <div className="App">
+      <div>
+        <Pipeline backgroundColor="#3c3c3c"/>
       </div>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />

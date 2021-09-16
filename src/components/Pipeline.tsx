@@ -1,4 +1,4 @@
-import CanvasBackground from "./CanvasBackground";
+import CanvasBackground, { CanvasBackgroundProps } from "./CanvasBackground";
 
 import { HALF_PI, TAU, TO_RAD, rand, fadeInOut } from "../utils/Math";
 
@@ -18,10 +18,18 @@ const baseWidth = 2;
 const rangeWidth = 4;
 const baseHue = 180;
 const rangeHue = 60;
-const backgroundColor = "hsla(150,80%,1%,1)";
 
-class Pipeline extends CanvasBackground<{}> {
+export interface PipelineProps extends CanvasBackgroundProps {
+  backgroundColor?: string;
+}
+
+class Pipeline extends CanvasBackground<PipelineProps> {
   protected pipeProps: Float32Array | null;
+
+  public static defaultProps = {
+    ...CanvasBackground.defaultProps,
+    backgroundColor: "hsla(150,80%,1%,1)",
+  };
 
   constructor(props: any) {
     super(props);
@@ -153,7 +161,7 @@ class Pipeline extends CanvasBackground<{}> {
   renderPipeline() {
     if (this.ctx?.b && this.canvasA.current && this.canvasB.current) {
       this.ctx.b.save();
-      this.ctx.b.fillStyle = backgroundColor;
+      this.ctx.b.fillStyle = this.props.backgroundColor!;
       this.ctx.b.fillRect(
         0,
         0,

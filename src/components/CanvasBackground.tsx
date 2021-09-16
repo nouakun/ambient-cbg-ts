@@ -1,10 +1,21 @@
 import React, { Component, CSSProperties, RefObject } from "react";
 
-export type CanvasBackgroundProps = {};
-//@ts-ignore
-type CanvasBackgroundStates = {};
+export type CanvasBackgroundProps = {
+  styles?: CSSProperties;
+};
 
-class CanvasBackground<CanvasBackgroundProps> extends Component {
+const InitialStyles: CSSProperties = {
+  position: "fixed",
+  zIndex: -1,
+  top: 0,
+  left: 0,
+  width: 100 + "vw",
+  height: 100 + "vh",
+};
+class CanvasBackground<T extends CanvasBackgroundProps> extends Component<
+  T,
+  {}
+> {
   protected canvasA: RefObject<HTMLCanvasElement>;
   protected canvasB: RefObject<HTMLCanvasElement>;
   protected ctx: {
@@ -15,7 +26,11 @@ class CanvasBackground<CanvasBackgroundProps> extends Component {
   protected frameId: number | null;
   protected tick: number;
 
-  constructor(props: CanvasBackgroundProps) {
+  public static defaultProps = {
+    styles: InitialStyles,
+  };
+
+  constructor(props: T) {
     super(props);
     this.canvasA = React.createRef<HTMLCanvasElement>();
     this.canvasB = React.createRef<HTMLCanvasElement>();
@@ -44,19 +59,21 @@ class CanvasBackground<CanvasBackgroundProps> extends Component {
   draw() {}
 
   render() {
-    const styles: CSSProperties = {
-      position: "fixed",
-      zIndex: -1,
-      top: 0,
-      left: 0,
-      width: 100 + "vw",
-      height: 100 + "vh",
-    };
+    const userStyles = this.props.styles;
 
     return (
       <>
-        <canvas ref={this.canvasA} style={styles} />
-        <canvas ref={this.canvasB} style={styles} />
+        <canvas
+          ref={this.canvasA}
+          style={{ ...InitialStyles, ...userStyles }}
+        />
+        <canvas
+          ref={this.canvasB}
+          style={{
+            ...InitialStyles,
+            ...userStyles,
+          }}
+        />
       </>
     );
   }
