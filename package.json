@@ -1,7 +1,7 @@
 {
   "name": "ambient-cbg-ts",
   "description": "A React.js webpage backgrounds created using the HTML5 Canvas API and jwagner's Simplex Noise library",
-  "version": "1.1.0",
+  "version": "1.0.5",
   "author": {
     "name": "Nawaf Khalifah",
     "email": "me@nawaf.studio"

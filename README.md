@@ -1,6 +1,6 @@
 ## React Ambient Canvas Backgrounds
 
-The main project [crnacura/AmbientCanvasBackgrounds](https://yuriylisovskiy.github.io/ambient-cbg).
+The main project [crnacura/ambient-cbg](https://yuriylisovskiy.github.io/ambient-cbg).
 
 I just re-implemented the components to make it support typescript and work with the latest reactjs.
 
