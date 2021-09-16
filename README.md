@@ -29,13 +29,13 @@ Example:
 import React, {Component} from 'react';
 import './App.css';
 
-import {Coalesce} from 'ambient-cbg'
+import {Pipline} from 'ambient-cbg-ts'
 
 class App extends Component {
     render() {
         return (
             <div className="App">
-                <Coalesce/>
+                <Pipline/>
                 <h1>Hello, World!</h1>
             </div>
         );
